@@ -7,8 +7,7 @@ namespace ModelBinder.Controllers
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
     {
-        private static readonly string[] Summaries = new[]
-        {
+        private static readonly string[] Summaries = {
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         };
 
@@ -21,7 +20,7 @@ namespace ModelBinder.Controllers
         [HttpGet("valid/{id}")]
         public string Get(int id, [ModelBinder(typeof(OptionsBinder))] bool isValid)
         {
-            return $"{id} is {(isValid ? "valid" : "notValid")}";
+            return $"{id} is {(isValid ? "valid" : "not valid")}";
         }
     }
 }
